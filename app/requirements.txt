@@ -1,1 +1,7 @@
-regex~=2024.0
+# main
+regex
+pylint
+rulebook-pylint
+# test
+pytest
+pytest-cov

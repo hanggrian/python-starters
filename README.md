@@ -1,9 +1,14 @@
-# Python
+# Python Starters
 
-![Repository logo.](https://github.com/hendraanggrian/python-starters/raw/assets/logo.png)
+![The repository logo.](https://github.com/hendraanggrian/python-starters/raw/assets/logo.png)
 
 Personal Gradle project templates with emphasis on **Python**, separated by
 target platform and kind of distribution.
+
+| | Publication
+--- | :---:
+app | &cross;
+library | [Package Index]
 
 ## Project Layout
 
@@ -15,3 +20,5 @@ target platform and kind of distribution.
   - [EditorConfig](https://editorconfig.org/) enforces IDE settings.
   - [CircleCI](https://circleci.com/) to run test every commit, also triggers
     [Codecov](https://codecov.io/) coverage.
+
+[Package Index]: https://pypi.org/

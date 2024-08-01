@@ -1,6 +1,6 @@
 import unittest
 
-from myregex import pattern
+from app.myregex import pattern
 
 
 class TestSourceWordMeaningChecker(unittest.TestCase):
