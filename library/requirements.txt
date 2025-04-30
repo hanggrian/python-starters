@@ -1,7 +1,10 @@
-# main
+# lint
 regex
 pylint
 rulebook-pylint
+# main
 # test
 pytest
 pytest-cov
+
+-r requirements-website.txt

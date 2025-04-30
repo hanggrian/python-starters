@@ -13,8 +13,7 @@ jobs:
     executor: linux
     steps:
       - checkout
-      - run: pip install -r requirements.txt
-      - run: pytest --cov .
+      - run: pip install -r requirements.txt && pytest --cov .
       - codecov/upload
 
 workflows:

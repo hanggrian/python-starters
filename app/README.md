@@ -7,10 +7,6 @@
 
 Some cool stuff going on here.
 
-## Download
-
-Work in progress.
-
 ## Usage
 
 Work in progress.

@@ -3,8 +3,10 @@ regex
 pylint
 rulebook-pylint
 # main
-# test
-pytest
-pytest-cov
+pandas
+numpy
+jinja2
+IPython
+ipykernel
 
 -r requirements-website.txt
