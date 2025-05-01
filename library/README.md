@@ -4,14 +4,14 @@
 [![Package Index Test](https://shields.io/pypi/v/library?label=testpypi&pypiBaseUrl=https://test.pypi.org)](https://test.pypi.org/project/library/)
 [![Python](https://img.shields.io/badge/python-3-informational)](https://docs.python.org/3/)
 
-# Library
+# My Library
 
 Some cool stuff going on here.
 
 ## Download
 
 ```sh
-pip install library
+pip install library library-extension
 ```
 
 ## Usage

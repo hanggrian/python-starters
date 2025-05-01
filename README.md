@@ -1,17 +1,17 @@
 # Python Starters
 
-![The repository logo.](https://github.com/hendraanggrian/python-starters/raw/assets/logo.png)
+![](https://github.com/hanggrian/python-starters/raw/assets/logo.png)
 
-Personal Gradle project templates with emphasis on **Python,** separated by
+Common pyproject project templates with emphasis on **Python,** separated by
 target platform and kind of distribution.
 
-| | Testing | Publishing | Coverage
---- | :---: | :---: | :---:
-app | [Pytest] | &cross; | &check;
-library | [Pytest] | [Package Index] | &check;
-notebook | &cross; | &cross; | &cross;
+| | Testing | Publishing | Website | Coverage
+--- | :---: | :---: | :---: | :---:
+app | [Pytest] | &cross; | [Material] | &check;
+library | [Pytest] | [Package Index] | [Pdoc], [Material] | &check;
+notebook | &cross; | &cross; | [Pdoc], [Material] | &cross;
 
-## Python frameworks
+## Frameworks
 
 - Built-in Unittest testing framework.
 - [Pylint](https://pylint.pycqa.org/en/stable/index.html) code linter with
@@ -29,9 +29,11 @@ notebook | &cross; | &cross; | &cross;
   - [CircleCI](https://circleci.com/) to run test every commit, also triggers
     [Codecov](https://codecov.io/) coverage.
 - Website module:
-  - [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) for
-    generating webpages displaying README and other content.
+  - [MkDocs](https://www.mkdocs.org/) for generating webpages displaying README
+    and other content.
   - The webpages are manually deployed with `mkdocs gh-deploy`.
 
 [Pytest]: https://docs.pytest.org/en/stable/
 [Package Index]: https://pypi.org/
+[Pdoc]: https://pdoc.dev/
+[Material]: https://squidfunk.github.io/mkdocs-material/

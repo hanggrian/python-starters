@@ -13,7 +13,11 @@ jobs:
     executor: linux
     steps:
       - checkout
-      - run: pip install -r requirements.txt && pytest --cov .
+      - run: |
+          pip install -r requirements.txt && \
+          pip install -e library && \
+          pytest library --cov . && \
+          pytest library-extension --cov . --cov-append
       - codecov/upload
 
 workflows:

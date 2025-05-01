@@ -8,3 +8,5 @@ mkdocs-glightbox
 mkdocs-minify-plugin
 mkdocs-redirects
 mkdocs-rss-plugin
+
+pdoc3

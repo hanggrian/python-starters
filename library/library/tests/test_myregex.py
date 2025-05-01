@@ -1,11 +1,11 @@
 import unittest
 
-from library.myregex import pattern
+from library.myregex import REGEX
 
 
-class TestSourceWordMeaningChecker(unittest.TestCase):
+class TestRegex(unittest.TestCase):
     def test_regex(self):
-        self.assertEqual('Hello', pattern.match('Hello world').group(0))
+        self.assertIsNotNone(REGEX)
 
 
 if __name__ == '__main__':

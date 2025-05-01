@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "library-extension"
+version = "0.1"
+license = { text = "Apache-2.0" }
+description = "A very awesome library"
+readme = "README.md"
+authors = [{ name = "John Doe", email = "johndoe@mail.com" }]
+keywords = ["awesome library", "cool stuff"]
+requires-python = ">=3.8.0"
+
+[project.urls]
+"Source Code" = "https://github.com/johndoe/library"
+"Bug Tracker" = "https://github.com/johndoe/library/issues"
+
+[tool.setuptools.packages.find]
+exclude = ["tests*"]
+
+[tool.setuptools.package-dir]
+"" = "."
+
+[tool.aliases]
+test = "pytest"
+
+[tool.pytest.ini_options]
+testpaths = ["library-extension/tests"]
+python_files = ["*test_*.py"]

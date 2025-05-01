@@ -1,4 +1,4 @@
-site_name: Material for MkDocs
+site_name: My Library
 site_url: https://johndoe.github.io/library/
 site_author: John Doe
 site_description: A very awesome library
@@ -38,6 +38,8 @@ theme:
 
 nav:
   - Home: index.md
+  - Library API reference: api/library/index.md
+  - Library Extension API reference: api/library_extension/index.md
 
 plugins:
   - search

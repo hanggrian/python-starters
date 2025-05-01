@@ -3,7 +3,7 @@
 [![GitHub Releases](https://img.shields.io/github/release/johndoe/app)](https://github.com/johndoe/app/releases/)
 [![Python](https://img.shields.io/badge/python-3-informational)](https://docs.python.org/3/)
 
-# App
+# My App
 
 Some cool stuff going on here.
 

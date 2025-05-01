@@ -1,4 +1,4 @@
-from library.library.myregex import pattern
+from library_extension.mypattern import pattern
 
 for text in (
     'John Doe',

@@ -1,9 +1,9 @@
-site_name: Material for MkDocs
+site_name: My App
 site_url: https://johndoe.github.io/app/
 site_author: John Doe
-site_description: A very awesome app
+site_description: A very awesome src
 
-repo_name: johndoe/app
+repo_name: johndoe/src
 repo_url: https://github.com/johndoe/app/
 
 copyright: <a href="https://johndoe.github.io">About me</a>

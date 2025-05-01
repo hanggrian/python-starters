@@ -3,7 +3,7 @@ Some cool stuff going on here.
 ## Download
 
 ```sh
-pip install library
+pip install library library-extension
 ```
 
 ## Usage

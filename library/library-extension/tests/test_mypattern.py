@@ -1,9 +1,9 @@
 import unittest
 
-from app.myregex import pattern
+from library_extension.mypattern import pattern
 
 
-class TestSourceWordMeaningChecker(unittest.TestCase):
+class TestPattern(unittest.TestCase):
     def test_regex(self):
         self.assertEqual('Hello', pattern.match('Hello world').group(0))
 
