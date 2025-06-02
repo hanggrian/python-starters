@@ -13,7 +13,8 @@ notebook | &cross; | &cross; | [Pdoc], [Material] | &cross;
 
 ## Frameworks
 
-- Built-in Unittest testing framework.
+- Built-in `unittest` testing framework with [`unittest.mock`](https://docs.python.org/3/library/unittest.mock.html) suite and [pytest](https://docs.pytest.org/en/stable/) as a test
+  runner.
 - [Pylint](https://pylint.pycqa.org/en/stable/index.html) code linter with
   third-party ruleset [Rulebook](https://github.com/hendraanggrian/rulebook/).
 - [Coverage plugin](https://github.com/pytest-dev/pytest-cov) for Pytest.
