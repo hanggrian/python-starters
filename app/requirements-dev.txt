@@ -1,0 +1,9 @@
+-r requirements.txt
+
+# lint
+pylint==3.2.5
+rulebook-pylint==0.1
+regex
+# test
+pytest
+pytest-cov

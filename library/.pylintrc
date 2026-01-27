@@ -2,15 +2,7 @@
 #
 # Rulebook: https://github.com/hanggrian/rulebook/
 # Pylint: https://pypi.org/project/pylint/
-# Source template: https://github.com/pylint-dev/pylint/blob/b738d233e2df7651abae847e2331e2621482e5fb/pylintrc/
-#
-# Modifications:
-#
-# - Configure 'bad-names' to 'integer,string'.
-# - Modify 'disable':
-#   - Add 'missing-module-docstring'.
-#   - Add 'missing-class-docstring'.
-#   - Add 'missing-type-doc'.
+# Source template: https://github.com/pylint-dev/pylint/blob/main/pylintrc/
 
 [MAIN]
 
@@ -49,35 +41,48 @@ load-plugins=
   pylint.extensions.broad_try_clause,
   pylint.extensions.dict_init_mutate,
   pylint.extensions.consider_refactoring_into_while_condition,
-  rulebook_pylint.block_comment_line_joining_checker,
-  rulebook_pylint.block_comment_line_trimming_checker,
-  rulebook_pylint.case_line_joining_checker,
-  rulebook_pylint.class_final_name_blacklisting_checker,
-  rulebook_pylint.class_name_acronym_capitalization_checker,
-  rulebook_pylint.class_organization_checker,
-  rulebook_pylint.code_block_line_trimming_checker,
-  rulebook_pylint.comment_line_joining_checker,
-  rulebook_pylint.comment_line_trimming_checker,
-  rulebook_pylint.default_flattening_checker,
-  rulebook_pylint.exception_extending_checker,
-  rulebook_pylint.file_initial_line_trimming_checker,
-  rulebook_pylint.file_size_limitation_checker,
-  rulebook_pylint.generics_name_whitelisting_checker,
-  rulebook_pylint.if_else_flattening_checker,
-  rulebook_pylint.inner_class_position_checker,
-  rulebook_pylint.special_function_position_checker,
-  rulebook_pylint.string_single_quoting_checker,
-  rulebook_pylint.switch_multiple_branching_checker,
-  rulebook_pylint.todo_comment_styling_checker,
-  rulebook_pylint.trailing_comma_insertion_checker,
+  rulebook_pylint.checkers.file_size,
+  rulebook_pylint.checkers.todo_comment,
+  rulebook_pylint.checkers.trailing_comma,
+  # Clipping
+  rulebook_pylint.checkers.empty_parentheses_clip,
+  rulebook_pylint.checkers.short_block_comment_clip,
+  # Declaring
+  rulebook_pylint.checkers.abstract_class_definition,
+  rulebook_pylint.checkers.exception_inheritance,
+  rulebook_pylint.checkers.string_quotes,
+  # Naming
+  rulebook_pylint.checkers.class_name_abbreviation,
+  rulebook_pylint.checkers.illegal_class_name_suffix,
+  rulebook_pylint.checkers.required_generics_name,
+  # Ordering
+  rulebook_pylint.checkers.built_in_function_position,
+  rulebook_pylint.checkers.inner_class_position,
+  rulebook_pylint.checkers.member_order,
+  # Spacing
+  rulebook_pylint.checkers.case_separator,
+  rulebook_pylint.checkers.comment_space,
+  rulebook_pylint.checkers.member_separator,
+  # Stating
+  rulebook_pylint.checkers.nested_if_else,
+  rulebook_pylint.checkers.redundant_default,
+  rulebook_pylint.checkers.unnecessary_switch,
+  rulebook_pylint.checkers.unnecessary_blank_line_after_colon,
+  rulebook_pylint.checkers.unnecessary_blank_line_before_package,
+  # Trimming
+  rulebook_pylint.checkers.block_comment_trim,
+  rulebook_pylint.checkers.comment_trim,
+  rulebook_pylint.checkers.duplicate_blank_line,
+  rulebook_pylint.checkers.duplicate_blank_line_in_block_comment,
+  rulebook_pylint.checkers.duplicate_blank_line_in_comment,
+  rulebook_pylint.checkers.duplicate_space,
+  rulebook_pylint.checkers.parentheses_trim,
+  # Wrapping
+  rulebook_pylint.checkers.parameter_wrap,
 
 # Use multiple processes to speed up Pylint. Specifying 0 will auto-detect the
 # number of processors available to use.
 jobs=1
-
-# When enabled, pylint would attempt to guess common misconfiguration and emit
-# user-friendly hints instead of false-positive error messages.
-suggestion-mode=yes
 
 # Allow loading of arbitrary C extensions. Extensions are imported into the
 # active Python interpreter and may run arbitrary code.
@@ -89,7 +94,7 @@ unsafe-load-any-extension=no
 extension-pkg-allow-list=
 
 # Minimum supported python version
-py-version = 3.8.0
+py-version = 3.10.0
 
 # Control the amount of potential inferred values when inferring a single
 # object. This can help the performance when dealing with large functions or
@@ -144,11 +149,11 @@ disable=
   # We anticipate #3512 where it will become optional
   fixme,
   consider-using-assignment-expr,
-  possibly-used-before-assignment,
   # custom
   missing-module-docstring,
   missing-class-docstring,
-  missing-type-doc
+  missing-type-doc,
+
 
 [REPORTS]
 
@@ -277,7 +282,7 @@ good-names=i,j,k,ex,Run,_
 good-names-rgxs=
 
 # Bad variable names which should always be refused, separated by a comma
-bad-names=integer,string
+bad-names=objs,ints,strs
 
 # Bad variable names regexes, separated by a comma. If names match any regex,
 # they will always be refused
@@ -417,13 +422,14 @@ ignore-on-opaque-inference=yes
 # of finding the hint is based on edit distance.
 missing-member-hint=yes
 
-# The minimum edit distance a name should have in order to be considered a
+# The maximum edit distance a name should have in order to be considered a
 # similar match for a missing member name.
 missing-member-hint-distance=1
 
 # The total number of similar names that should be taken in consideration when
 # showing a hint for a missing member.
 missing-member-max-choices=1
+
 
 [SPELLING]
 
@@ -432,14 +438,14 @@ missing-member-max-choices=1
 spelling-dict=
 
 # List of comma separated words that should not be checked.
-spelling-ignore-words=
+spelling-ignore-words=subpkg,MyClass
 
 # List of comma separated words that should be considered directives if they
 # appear and the beginning of a comment and should not be checked.
 spelling-ignore-comment-directives=fmt: on,fmt: off,noqa:,noqa,nosec,isort:skip,mypy:,pragma:,# noinspection
 
 # A path to a file that contains private dictionary; one word per line.
-spelling-private-dict-file=.pyenchant_pylint_custom_dict.txt
+spelling-private-dict-file=custom_dict.txt
 
 # Tells whether to store unknown words to indicated private dictionary in
 # --spelling-private-dict-file option instead of raising a message.
@@ -472,6 +478,10 @@ max-attributes=11
 # Maximum number of statements in a try-block
 max-try-statements = 7
 
+# Maximum number of positional arguments (see R0917).
+max-positional-arguments = 12
+
+
 [CLASSES]
 
 # List of method names used to declare (i.e. assign) instance attributes.
@@ -489,6 +499,7 @@ exclude-protected=_asdict,_fields,_replace,_source,_make
 
 # Warn about protected attribute access inside special methods
 check-protected-access-in-special-methods=no
+
 
 [IMPORTS]
 
@@ -524,7 +535,7 @@ int-import-graph=
 
 # Force import order to recognize a module as part of the standard
 # compatibility libraries.
-known-standard-library=
+known-standard-library=_string
 
 # Force import order to recognize a module as part of a third party library.
 known-third-party=enchant
