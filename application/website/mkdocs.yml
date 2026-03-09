@@ -1,10 +1,10 @@
-site_name: My App
-site_url: https://johndoe.github.io/app/
+site_name: My Application
+site_url: https://johndoe.github.io/application/
 site_author: John Doe
-site_description: A very awesome src
+site_description: A very awesome application
 
-repo_name: johndoe/src
-repo_url: https://github.com/johndoe/app/
+repo_name: johndoe/application
+repo_url: https://github.com/johndoe/application/
 
 copyright: <a href="https://johndoe.github.io">About me</a>
 

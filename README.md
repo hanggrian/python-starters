@@ -1,13 +1,13 @@
 # Python Starters
 
-![](https://github.com/hanggrian/python-starters/raw/assets/logo.png)
+![Logo](https://github.com/hanggrian/python-starters/raw/assets/logo.png)
 
-Common pyproject project templates with emphasis on **Python,** separated by
-target platform and kind of distribution.
+Common Python project templates, separated by target platform and kind of
+distribution.
 
 | | Testing | Publishing | Website | Coverage
 --- | :---: | :---: | :---: | :---:
-app | [Pytest] | &cross; | [Material] | &check;
+application | [Pytest] | &cross; | [Material] | &check;
 library | [Pytest] | [Package Index] | [Pdoc], [Material] | &check;
 notebook | &cross; | &cross; | [Pdoc], [Material] | &cross;
 
@@ -27,8 +27,13 @@ notebook | &cross; | &cross; | [Pdoc], [Material] | &cross;
     and [gitignore](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files/)
     file.
   - [EditorConfig](https://editorconfig.org/) enforces IDE settings.
-  - [CircleCI](https://circleci.com/) to run test every commit, also triggers
-    [Codecov](https://codecov.io/) coverage.
+- [CircleCI](https://circleci.com/) workflow:
+  - Run tests, linters and push coverage to [Codecov](https://codecov.io/).
+  - Activate [Renovate](https://docs.renovatebot.com/) bot to alert out-of-date
+    dependencies.
+- [UV](https://docs.astral.sh/uv/) package manager:
+  - `pyproject.toml` with hatchling build system.
+  - `uv.lock` for deterministic dependencies.
 - Website module:
   - [MkDocs](https://www.mkdocs.org/) for generating webpages displaying README
     and other content.

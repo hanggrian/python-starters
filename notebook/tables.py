@@ -9,5 +9,5 @@ def show(filename: str) -> None:
     data.index = arange(1, len(data) + 1)
     data.loc['Grand Total'] = ['', data['Price'].sum()]
 
-    data['Price'] = data['Price'].map('{:,}'.format)
+    data['Price'] = data['Price'].map('{:,}'.format)  # pylint: disable=consider-using-f-string
     display(HTML(data.to_html(render_links=True, escape=False)))

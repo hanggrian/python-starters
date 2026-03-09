@@ -1,0 +1,17 @@
+[tool.uv.workspace]
+members = [
+  "library",
+  "library-extension",
+]
+
+[dependency-groups]
+dev = [
+  "pdoc",
+  # lint
+  "pylint==4.0.4",
+  "rulebook-pylint==0.2",
+  "regex",
+  # test
+  "pytest",
+  "pytest-cov",
+]
