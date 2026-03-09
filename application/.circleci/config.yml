@@ -27,19 +27,14 @@ jobs:
     steps:
       - attach_workspace:
           at: .
-      - run: |
-          # duplicate directory names, `uv run pylint library` wouldn't work
-          uv run pylint library/library/
-          uv run pylint library/tests/
-          uv run pylint library-extension/
+      - run: uv run pylint src/
   upload-coverage:
     executor: python
     steps:
       - attach_workspace:
           at: .
       - run: |
-          uv run pytest library/ --cov=library
-          uv run pytest library-extension/ --cov=library-extension --cov-append
+          uv run pytest tests/ --cov
           uv run coverage xml
       - codecov/upload
   activate-renovatebot:

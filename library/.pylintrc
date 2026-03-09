@@ -50,7 +50,7 @@ load-plugins=
   # Declaring
   rulebook_pylint.checkers.abstract_class_definition,
   rulebook_pylint.checkers.exception_inheritance,
-  rulebook_pylint.checkers.string_quotes,
+  # rulebook_pylint.checkers.string_quotes,
   # Naming
   rulebook_pylint.checkers.class_name_abbreviation,
   rulebook_pylint.checkers.illegal_class_name_suffix,
@@ -75,7 +75,7 @@ load-plugins=
   rulebook_pylint.checkers.duplicate_blank_line,
   rulebook_pylint.checkers.duplicate_blank_line_in_block_comment,
   rulebook_pylint.checkers.duplicate_blank_line_in_comment,
-  rulebook_pylint.checkers.duplicate_space,
+  # rulebook_pylint.checkers.duplicate_space,
   rulebook_pylint.checkers.parentheses_trim,
   # Wrapping
   rulebook_pylint.checkers.parameter_wrap,

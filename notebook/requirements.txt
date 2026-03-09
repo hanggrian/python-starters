@@ -1,6 +1,0 @@
-# main
-pandas
-numpy
-jinja2
-IPython
-ipykernel

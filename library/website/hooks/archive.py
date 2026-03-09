@@ -48,7 +48,7 @@ def on_post_build(config: MkDocsConfig):
         return
 
     # Read files to ignore from .gitignore
-    with open(".gitignore") as f:
+    with open("../.gitignore") as f:
         spec = GitIgnoreSpec.from_lines([
             line for line in f.read().split("\n")
                 if line and not line.startswith("#")
