@@ -14,4 +14,8 @@ max_line_length = 80
 [*.py]
 indent_size = 4
 max_line_length = 100
-ij_python_continuation_indent_size = 4
+ij_python_from_import_trailing_comma_if_multiline = true
+ij_python_from_import_wrapping = on_every_item
+ij_python_use_trailing_comma_in_arguments_list = unset # allow for generator function, such as any(...)
+ij_python_use_trailing_comma_in_collections = true
+ij_python_use_trailing_comma_in_parameter_list = true
