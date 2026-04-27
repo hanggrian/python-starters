@@ -14,4 +14,4 @@ runs:
         key: uv-${{ hashFiles('uv.lock') }}
 
     - shell: bash
-      run: uv sync
+      run: pnpm i

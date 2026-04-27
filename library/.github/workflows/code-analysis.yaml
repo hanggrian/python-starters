@@ -2,6 +2,10 @@ name: code-analysis
 
 on: [push, pull_request]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   GRADLE_USER_HOME: ${{ github.workspace }}/.gradle/
   GRADLE_OPTS: -Dorg.gradle.daemon=false
@@ -14,7 +18,10 @@ jobs:
 
       - uses: ./.github/actions/setup-workspace
 
-      - run: uv run pylint src/
+      - run: |
+          uv run pylint library/library/
+          uv run pylint library/tests/
+          uv run pylint library-extension/
 
   upload-coverage:
     runs-on: ubuntu-latest
@@ -24,7 +31,8 @@ jobs:
       - uses: ./.github/actions/setup-workspace
 
       - run: |
-          uv run pytest tests/ --cov
+          uv run pytest library/ --cov=library
+          uv run pytest library-extension/ --cov=library-extension --cov-append
           uv run coverage xml
 
       - if: github.ref == 'refs/heads/main'

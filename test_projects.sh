@@ -20,6 +20,7 @@ install() {
 
 lint() {
   uv run pylint "$@"
+  uv run stylebook .github/ *.toml
 }
 
 test() {
