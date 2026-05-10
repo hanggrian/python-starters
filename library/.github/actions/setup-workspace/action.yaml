@@ -4,7 +4,7 @@ description: Checkout and install all dependencies
 runs:
   using: composite
   steps:
-    - uses: astral-sh/setup-uv@v7
+    - uses: astral-sh/setup-uv@v8.1.0
       with:
         python-version: '3.14'
 
@@ -12,6 +12,7 @@ runs:
       with:
         path: .venv/
         key: uv-${{ hashFiles('uv.lock') }}
+        restore-keys: uv-
 
     - shell: bash
-      run: uv sync
+      run: uv sync --locked

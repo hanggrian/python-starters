@@ -3,6 +3,7 @@ name = "app"
 version = "0.1"
 requires-python = ">=3.10"
 dependencies = [
+  # main
   "pandas",
   "numpy",
   "jinja2",
@@ -10,9 +11,23 @@ dependencies = [
   "ipykernel",
 ]
 
+[tool.poe.tasks]
+lint1 = "pylint *.py"
+lint2 = "stylebook .github/ *.toml"
+lint.parallel = ["lint1", "lint2"]
+documentation1 = "rm -rf build/pdoc/"
+documentation2 = "pdoc -o build/pdoc/ *.py"
+documentation = ["documentation1", "documentation2"]
+
+[tool.poe.tasks.build-website]
+shell = "uv pip install -r website/requirements.txt && cd website/ && mkdocs build"
+
+[tool.poe.tasks.preview-website]
+shell = "uv pip install -r website/requirements.txt && cd website/ && mkdocs serve --livereload"
+
 [dependency-groups]
 dev = [
-  # main
+  "poethepoet",
   "pdoc",
   # lint
   "pylint==4.0.4",
