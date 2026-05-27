@@ -3,6 +3,7 @@ from tkinter import Tk, Label
 from src.label_impl import LabelImpl
 
 tk: Tk = Tk()
+tk.title('My Application')
 tk.geometry('400x300')
 
 label: Label = Label(tk, text='Hello, World!')

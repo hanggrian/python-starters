@@ -3,6 +3,7 @@ from tkinter import Tk, Label
 from library_extension.label_ext_impl import LabelExtImpl
 
 tk: Tk = Tk()
+tk.title('My Library')
 tk.geometry('400x300')
 
 label: Label = Label(tk, text='Hello, World!')

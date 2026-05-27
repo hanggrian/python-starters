@@ -23,7 +23,7 @@ echo '(1/3) Running UV commands'
 cd "$APPLICATION" || exit 1
 uv sync
 uv run poe lint
-uv run poe coverage
+uv run poe cov
 uv run poe build-website
 cd "$APPLICATION" || exit 1
 
@@ -43,8 +43,8 @@ echo '(1/4) Running UV commands'
 cd "$LIBRARY" || exit 1
 uv sync
 uv run poe lint
-uv run poe coverage
-uv run poe documentation
+uv run poe cov
+uv run poe doc
 uv run poe build-website
 cd "$LIBRARY" || exit 1
 
@@ -69,7 +69,7 @@ echo '(1/3) Running UV commands'
 cd "$NOTEBOOK" || exit 1
 uv sync
 uv run poe lint
-uv run poe documentation
+uv run poe doc
 uv run poe build-website
 cd "$NOTEBOOK" || exit 1
 

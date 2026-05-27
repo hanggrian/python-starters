@@ -17,7 +17,7 @@ notebook | &cross; | &cross; | [Pdoc], [Material] | &cross;
   runner.
 - [Pylint](https://pylint.pycqa.org/en/stable/index.html) code linter with
   third-party ruleset [Rulebook](https://github.com/hendraanggrian/rulebook/).
-- [Coverage plugin](https://github.com/pytest-dev/pytest-cov) for Pytest.
+- [Coverage plugin](https://github.com/pytest-dev/pytest-cov/) for Pytest.
 
 ## Project layout
 

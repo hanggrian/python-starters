@@ -15,9 +15,9 @@ dependencies = [
 lint1 = "pylint *.py"
 lint2 = "stylebook .github/ *.toml"
 lint.parallel = ["lint1", "lint2"]
-documentation1 = "rm -rf build/pdoc/"
-documentation2 = "pdoc -o build/pdoc/ *.py"
-documentation = ["documentation1", "documentation2"]
+doc1 = "rm -rf build/pdoc/"
+doc2 = "pdoc -o build/pdoc/ *.py"
+doc = ["doc1", "doc2"]
 
 [tool.poe.tasks.build-website]
 shell = "uv pip install -r website/requirements.txt && cd website/ && mkdocs build"
@@ -33,5 +33,5 @@ dev = [
   "pylint==4.0.4",
   "rulebook-pylint==0.2",
   "regex",
-  "stylebook==0.1",
+  "stylebook==0.2",
 ]
