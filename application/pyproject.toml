@@ -2,7 +2,9 @@
 name = "application"
 version = "0.1"
 requires-python = ">=3.10"
-dependencies = []
+dependencies = [
+  # main
+]
 
 [tool.poe.tasks]
 lint1 = "pylint src/ tests/"

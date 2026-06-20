@@ -11,7 +11,9 @@ readme = "../README.md"
 authors = [{ name = "John Doe", email = "johndoe@mail.com" }]
 keywords = ["awesome library", "cool stuff"]
 requires-python = ">=3.10.0"
-dependencies = []
+dependencies = [
+  # main
+]
 
 [project.urls]
 "Source Code" = "https://github.com/johndoe/library"
